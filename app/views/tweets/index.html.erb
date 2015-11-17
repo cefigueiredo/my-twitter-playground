@@ -5,7 +5,7 @@
   <% @tweets.each do |tweet| %>
     <li class="tweet" id="#{tweet.id}">
       <%= I18n.l(tweet.created_at) -%>
-      <%= tweet.text %>
+      <%= tweet_with_mentions(tweet.text) %>
     </li>
   <% end %>
 </ul>
