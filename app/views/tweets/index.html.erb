@@ -1,0 +1,10 @@
+<h1>My Timeline</h1>
+
+<ul class="tweet-group">
+  <% @tweets.each do |tweet| %>
+    <li class="tweet" id="#{tweet.id}">
+      <%= I18n.l(tweet.created_at) -%>
+      <%= tweet.text %>
+    </li>
+  <% end %>
+</ul>
