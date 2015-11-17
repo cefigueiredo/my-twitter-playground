@@ -12,6 +12,8 @@ class TweetsController < ApplicationController
   end
 
   def find_tweets_for(nickname)
-    TwitterIntegration.client.user_timeline(nickname, count: 25)
+    cache ['tweets', nickname], expires_in: 5.minutes do
+      TwitterIntegration.client.user_timeline(nickname, count: 25)
+    end
   end
 end

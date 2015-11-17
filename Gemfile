@@ -14,6 +14,7 @@ gem 'rails_12factor', group: :production
 gem 'twitter'
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'dalli'
 
 group :development, :test do
   gem 'byebug'
