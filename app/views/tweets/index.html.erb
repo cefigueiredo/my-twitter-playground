@@ -1,5 +1,6 @@
-<h1>My Timeline</h1>
+<h1>Tweets of @<%= @nickname %></h1>
 
+<%= render 'search' %>
 <ul class="tweet-group">
   <% @tweets.each do |tweet| %>
     <li class="tweet" id="#{tweet.id}">

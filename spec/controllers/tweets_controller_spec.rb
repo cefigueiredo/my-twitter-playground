@@ -13,6 +13,18 @@ RSpec.describe TweetsController, type: :controller do
 
       it { expect(subject).to be_success }
       it { expect(subject).to have_http_status(200) }
+
+      context "and give the desired user by 'handle' query_string" do
+        it "shows the given user's tweets" do
+          get :index, handle: 'existent-user'
+          expect(response).to render_template 'tweets/index'
+        end
+
+        it "shows user_not_found template when user can not be found" do
+          get :index, handle: 'not-existent'
+          expect(response).to render_template 'tweets/user_not_found'
+        end
+      end
     end
 
     context "when user is not authenticated" do

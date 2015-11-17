@@ -1,0 +1,5 @@
+<%= form_tag(tweets_path, method: :get) do %>
+  <%= label_tag 'handle', 'Show tweets of:' %>
+  <%= search_field_tag 'handle', params[:handle] %>
+  <%= submit_tag 'Find', data: { disable_with: 'Searching ...'} %>
+<% end %>
