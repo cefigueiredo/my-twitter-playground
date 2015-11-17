@@ -7,7 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if signed_in? %>
+    <header>
+      <nav class="menu">
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </header>
+  <% end %>
 <%= yield %>
 
 </body>
