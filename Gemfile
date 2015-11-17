@@ -12,6 +12,8 @@ gem 'turbolinks'
 gem 'rails_12factor', group: :production
 
 gem 'twitter'
+gem 'devise'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'byebug'
