@@ -1,6 +1,5 @@
 <h1>Tweets of @<%= @nickname %></h1>
 
-<%= render 'search' %>
-  <ul class="tweet-group">
-    <%= render partial: 'tweet', collection: @tweets, as: :tweet %>
-  </ul>
+<ul class="tweet-group">
+  <%= render partial: 'tweet', collection: @tweets, as: :tweet %>
+</ul>

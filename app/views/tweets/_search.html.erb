@@ -1,5 +1,10 @@
 <%= form_tag(tweets_path, method: :get) do %>
-  <%= label_tag 'handle', 'Show tweets of:' %>
-  <%= search_field_tag 'handle', params[:handle] %>
-  <%= submit_tag 'Find', data: { disable_with: 'Searching ...'} %>
+  <div class="form-group form-inline search">
+    <%= label_tag 'handle', 'Show tweets of:' %>
+    <div class="input-group">
+      <div class="input-group-addon">@</div>
+      <%= search_field_tag 'handle', params[:handle] , class: "form-control" %>
+    </div>
+    <%= submit_tag 'Find', class: "btn btn-primary" ,data: { disable_with: 'Searching ...'} %>
+  </div>
 <% end %>
