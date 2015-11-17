@@ -11,6 +11,8 @@ gem 'turbolinks'
 
 gem 'rails_12factor', group: :production
 
+gem 'twitter'
+
 group :development, :test do
   gem 'byebug'
 end
