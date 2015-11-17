@@ -10,7 +10,6 @@ gem 'puma'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass'
-gem 'font-awesome-rails'
 
 gem 'rails_12factor', group: :production
 
@@ -26,8 +25,10 @@ group :development, :test do
 end
 
 group :development do
+  gem 'foreman'
   gem 'web-console', '~> 2.0'
 
   gem 'spring'
 end
 
+gem 'nyan-cat-formatter', group: :test
