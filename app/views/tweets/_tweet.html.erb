@@ -1,4 +1,4 @@
 <li class="tweet" id="<%= tweet.id %>">
-  <%= tweet_with_mentions(tweet.text) %>
-  <%= I18n.l(tweet.created_at, format: :short) -%>
+  <p><%= tweet_with_mentions(tweet.text) %></p>
+  <small><%= I18n.l(tweet.created_at, format: :short) -%></small>
 </li>
