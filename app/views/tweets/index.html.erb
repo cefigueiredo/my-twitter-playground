@@ -1,11 +1,6 @@
 <h1>Tweets of @<%= @nickname %></h1>
 
 <%= render 'search' %>
-<ul class="tweet-group">
-  <% @tweets.each do |tweet| %>
-    <li class="tweet" id="#{tweet.id}">
-      <%= I18n.l(tweet.created_at) -%>
-      <%= tweet_with_mentions(tweet.text) %>
-    </li>
-  <% end %>
-</ul>
+  <ul class="tweet-group">
+    <%= render partial: 'tweet', collection: @tweets, as: :tweet %>
+  </ul>

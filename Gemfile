@@ -8,6 +8,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 
 gem 'rails_12factor', group: :production
 

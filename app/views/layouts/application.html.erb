@@ -7,17 +7,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if signed_in? %>
-    <header>
-      <nav class="menu">
-        <ul>
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-        </ul>
-      </nav>
-    </header>
-  <% end %>
-<%= yield %>
+  <div class="container">
+    <% if signed_in? %>
+      <header class="top-bar">
+        <nav class="navbar navbar-default">
+          <div class="collabse navbar-collapse">
+            <div class="nav navbar-nav">
+              <div>
+              </div>
+            </div>
 
+            <div class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav">
+                <li>
+                  <%= link_to root_path, class: 'user-avatar' do %>
+                    <img src="<%= current_user.image %>"/>
+                    <span class="nickname">@<%= current_user.nickname%></span>
+                  <% end %>
+                </li>
+                <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <% end %>
+
+    <%= yield %>
+
+  </div>
 </body>
 </html>

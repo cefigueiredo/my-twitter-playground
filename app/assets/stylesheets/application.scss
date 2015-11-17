@@ -1,0 +1,31 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+
+.nav {
+  .user-avatar {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    height: 100%;
+
+    img {
+      border-radius: 100%;
+    }
+  }
+}
+
+.tweet-group {
+  position: relative;
+  padding: 15px 15% 0% 15%;
+  min-width: 300px
+}
+
+.tweet {
+  padding: 10px;
+  margin: 5px;
+  height: 60px;
+  border: 1px solid blue;
+  border-radius: 10%;
+  list-style: none;
+  vertical-align: center;
+}
