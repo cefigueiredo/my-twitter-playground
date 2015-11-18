@@ -12,6 +12,11 @@ class FakeTimeLine
     fail Twitter::Error::NotFound if user == 'not-existent'
     [FakeTweet.new]
   end
+
+  def user(user)
+    fail Twitter::Error::NotFound if user == 'not-existent'
+    FakeUser.new
+  end
 end
 
 class FakeTweet
@@ -21,5 +26,15 @@ class FakeTweet
 
   def created_at
     DateTime.now
+  end
+end
+
+class FakeUser
+  def profile_image_url
+    'nice_picture.png'
+  end
+
+  def screen_name
+    'fake_user'
   end
 end

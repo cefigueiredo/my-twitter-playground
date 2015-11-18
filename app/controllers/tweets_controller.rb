@@ -3,12 +3,19 @@ class TweetsController < ApplicationController
 
   def index
     @nickname = params[:handle] || current_user.nickname
+    @twitter_profile = find_user_profile @nickname
     @tweets = find_tweets_for @nickname
   end
 
   private
   def user_not_found
     render :user_not_found
+  end
+
+  def find_user_profile(nickname)
+    cache ['user_profile', nickname], expires_in: 30.minutes do
+      TwitterIntegration.client.user(nickname)
+    end
   end
 
   def find_tweets_for(nickname)

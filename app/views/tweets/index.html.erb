@@ -1,7 +1,7 @@
 <ul class="tweet_group">
   <div class="tweet_group_header">
-    <img src="<%= @tweets.first.user.profile_image_url %>" class="handle-avatar" />
-    <span>@<%= @tweets.first.user.screen_name %></span>
+    <%= image_tag @twitter_profile.profile_image_url, class: "handle-avatar" %>
+    <span>@<%= @twitter_profile.screen_name %></span>
   </div>
   <%= render partial: 'tweet', collection: @tweets, as: :tweet %>
 </ul>
