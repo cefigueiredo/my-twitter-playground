@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     delete :sign_out, to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
+  get '/tweets', to: 'tweets#index', as: 'tweets'
   root to: 'tweets#index'
-
-  resources :tweets
 end
