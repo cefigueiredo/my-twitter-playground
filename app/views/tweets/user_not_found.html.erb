@@ -1,2 +1,9 @@
-<h1>User could not be found</h1>
+<div class="jumbotron">
+  <h1>User could not be found</h1>
+
+  <p>It was not possible find a user with the nickname <%= @nickname %></p>
+  <p>Maybe you misspelled the nickname or the user does not exist on Twitter</p>
+
+  <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+</div>
 

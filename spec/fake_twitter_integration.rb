@@ -10,6 +10,7 @@ end
 class FakeTimeLine
   def user_timeline(user, *args)
     fail Twitter::Error::NotFound if user == 'not-existent'
+    fail Twitter::Error::Unauthorized if user == 'private-account'
     [FakeTweet.new]
   end
 

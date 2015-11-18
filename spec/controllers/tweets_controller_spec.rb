@@ -24,6 +24,11 @@ RSpec.describe TweetsController, type: :controller do
           get :index, handle: 'not-existent'
           expect(response).to render_template 'tweets/user_not_found'
         end
+
+        it "shows unauthorized template when user account is private" do
+          get :index, handle: 'private-account'
+          expect(response).to render_template 'tweets/unauthorized'
+        end
       end
     end
 

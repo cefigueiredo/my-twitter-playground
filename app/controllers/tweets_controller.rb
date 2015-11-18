@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   rescue_from Twitter::Error::NotFound, with: :user_not_found
+  rescue_from Twitter::Error::Unauthorized, with: :unauthorized
 
   def index
     @nickname = params[:handle] || current_user.nickname
@@ -10,6 +11,10 @@ class TweetsController < ApplicationController
   private
   def user_not_found
     render :user_not_found
+  end
+
+  def unauthorized
+    render :unauthorized
   end
 
   def find_user_profile(nickname)
